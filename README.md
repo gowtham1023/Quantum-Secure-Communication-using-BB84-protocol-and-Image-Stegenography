@@ -1,70 +1,211 @@
-# Getting Started with Create React App
+# 🚀 Quantum Secure Communication using BB84   Protocol and Image Steganography 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern full-stack web application that combines **Quantum Key Distribution (QKD)** concepts with **Image Steganography** to securely encrypt and hide messages inside images.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+* 🔐 Quantum-inspired Encryption (QKD)
+* 🖼️ Image Steganography (Hide secret messages in images)
+* 🔓 Secure Decryption with Key Validation
+* ⚡ React Frontend + Flask Backend
+* 🎨 Premium UI
+* 🚫 Invalid Key Detection
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `npm test`
+### Frontend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* React.js
+* CSS
 
-### `npm run build`
+### Backend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Python
+* Flask
+* Pillow
+* Flask-CORS
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📁 Project Structure
 
-### `npm run eject`
+```
+quantum-stego-ui/
+│
+├── backend/
+│   ├── app.py
+│   ├── utils/
+│   │   ├── encrypt.py
+│   │   ├── decrypt.py
+│   │   ├── qkd.py
+│   │   ├── stego.py
+│   │   └── __init__.py
+│
+├── src/
+│   ├── components/
+│   │   ├── Encrypt.js
+│   │   ├── Decrypt.js
+│   │   └── Navbar.js
+│   ├── App.js
+│   └── App.css
+│
+├── package.json
+└── README.md
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## ⚙️ Installation & Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 1️⃣ Clone Repository
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+git clone https://github.com/your-username/quantum-stego-ui.git
+cd quantum-stego-ui
+```
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🔧 Backend Setup
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+cd backend
+python -m venv venv
+```
 
-### Code Splitting
+### ▶️ Activate Virtual Environment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Windows**
 
-### Analyzing the Bundle Size
+```bash
+venv\Scripts\activate
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**Mac/Linux**
 
-### Making a Progressive Web App
+```bash
+source venv/bin/activate
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 📦 Install Dependencies
 
-### Advanced Configuration
+```bash
+pip install flask flask-cors pillow
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### ▶️ Run Backend
 
-### Deployment
+```bash
+python app.py
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+👉 Server runs at:
+http://127.0.0.1:5000
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 💻 Frontend Setup
+
+```bash
+npm install
+npm start
+```
+
+👉 App runs at:
+http://localhost:3000
+
+---
+
+## 🔄 How It Works
+
+### 🔐 Encryption Process
+
+1. Enter your secret message
+2. Generate Quantum Key (QKD)
+3. Encrypt message using XOR
+4. Hide encrypted message inside image
+5. Download stego image
+
+---
+
+### 🔓 Decryption Process
+
+1. Upload stego image
+2. Enter the secret key
+3. Extract hidden data
+4. Decrypt message
+
+✅ Correct Key → Original Message
+❌ Wrong Key → Invalid Key
+
+---
+
+## 🔗 API Endpoints
+
+| Method | Endpoint | Description            |
+| ------ | -------- | ---------------------- |
+| POST   | /encrypt | Encrypt & hide data    |
+| POST   | /decrypt | Extract & decrypt data |
+
+---
+
+## ⚠️ Troubleshooting
+
+### ❌ Module Not Found Error
+
+```js
+import Encrypt from "./components/Encrypt";
+```
+
+✔️ Make sure file names and paths are correct
+
+---
+
+### ❌ CORS Error (Backend)
+
+```python
+from flask_cors import CORS
+CORS(app)
+```
+
+---
+
+## 🎯 Future Improvements
+
+* 🔬 Real Quantum Cryptography Integration
+* ☁️ Cloud Deployment
+* 📱 Mobile Responsive UI
+* 🖱️ Drag & Drop Image Upload
+* 🤖 AI-based Enhancements
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Clone your fork
+3. Create a new branch
+4. Commit your changes
+5. Push to GitHub
+6. Create a Pull Request
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+
+## ⭐ Support
+
+If you like this project:
+
+* ⭐ Star the repository
+* 🔁 Share it
+* 💡 Build more
+
+---
