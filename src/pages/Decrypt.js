@@ -30,12 +30,12 @@ function Decrypt() {
         setMessage(data.message);
       } else {
         setMessage(""); // clear old message
-        alert(data.error || "Invalid key");
+        alert("❌ Invalid key. Please enter the correct key.");
       }
 
     } catch (err) {
       console.error(err);
-      alert("Server error");
+      alert("❌ Enter the correct stego image");
     } finally {
       setLoading(false);
     }
